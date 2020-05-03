@@ -12,5 +12,13 @@
     "128": "icon-128.png"
   },
   "manifest_version": 2,
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "permissions": ["activetab"],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["content.bundle.js"],
+      "run_at": "document_end"
+    }
+  ]
 }
